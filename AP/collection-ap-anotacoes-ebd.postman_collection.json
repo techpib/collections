@@ -1,0 +1,279 @@
+{
+	"info": {
+		"_postman_id": "1cd1118f-f2bf-44dd-b3d4-7284280cd153",
+		"name": "collection-ap-anotacoes-ebd",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "geraToken",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"augusto.ls.12.08@gmail.com\",\r\n    \"senha\": \"teste123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/ap-anotacoes-ebd/auth",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"ap-anotacoes-ebd",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insereUsuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Augusto Luiz Silva\",\r\n    \"email\": \"augusto123@gmail.com\",\r\n    \"senha\": \"teste123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/ap-anotacoes-ebd/usuario",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"ap-anotacoes-ebd",
+						"usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "atualizaUsuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJTaXN0ZW1hIEFQIC0gQW5vdGHDp8O1ZXMgRUJEIiwic3ViIjoiODI3MmY2NTQtZWQ0NC00Y2IwLTk5ZDQtMTllY2E3YjAzMjJmIiwiaWF0IjoxNjQyMzgzOTA1LCJleHAiOjE2NDI0NzAzMDV9.l_uqaWZzr3Diedt7M1_B-eWGsDfRrw4jk3-1ZA52iRU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"augusto.ls.12.08@gmail.com\",\r\n    \"senhaAtual\": \"teste123\",\r\n    \"senhaNova\": \"teste1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/ap-anotacoes-ebd/usuario",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"ap-anotacoes-ebd",
+						"usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listaAnotacoesPorIdUsuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJTaXN0ZW1hIEFQIC0gQW5vdGHDp8O1ZXMgRUJEIiwic3ViIjoiODI3MmY2NTQtZWQ0NC00Y2IwLTk5ZDQtMTllY2E3YjAzMjJmIiwiaWF0IjoxNjQyMzg0NDQ3LCJleHAiOjE2NDI0NzA4NDd9.S4gpfg4u3m6tRoUGHuFhECG4qba8d7nPHs2hQweQdIc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/ap-anotacoes-ebd/anotacao/8272f654-ed44-4cb0-99d4-19eca7b0322f?page=0&size=10&sort=sequencial_Anotacao",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"ap-anotacoes-ebd",
+						"anotacao",
+						"8272f654-ed44-4cb0-99d4-19eca7b0322f"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						},
+						{
+							"key": "sort",
+							"value": "sequencial_Anotacao"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listaAnotacaoPorIdUsuarioESequencialAnotacao",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJTaXN0ZW1hIEFQIC0gQW5vdGHDp8O1ZXMgRUJEIiwic3ViIjoiODI3MmY2NTQtZWQ0NC00Y2IwLTk5ZDQtMTllY2E3YjAzMjJmIiwiaWF0IjoxNjQyMzg0NzUzLCJleHAiOjE2NDI0NzExNTN9.dv28ZFrMrN7jZfIWn2Y2EdGph2c08jqU9hSFVW5kOIs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/ap-anotacoes-ebd/anotacao/8272f654-ed44-4cb0-99d4-19eca7b0322f/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"ap-anotacoes-ebd",
+						"anotacao",
+						"8272f654-ed44-4cb0-99d4-19eca7b0322f",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insereAnotacao",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJTaXN0ZW1hIEFQIC0gQW5vdGHDp8O1ZXMgRUJEIiwic3ViIjoiODI3MmY2NTQtZWQ0NC00Y2IwLTk5ZDQtMTllY2E3YjAzMjJmIiwiaWF0IjoxNjQyMzg0NTE4LCJleHAiOjE2NDI0NzA5MTh9.uKLQhsCPh9CrMJncuKD2zyi8LcUSKSyMB6T5ackFw6g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idUsuario\": \"8272f654-ed44-4cb0-99d4-19eca7b0322f\",\r\n    \"sequencialAnotacao\": 2,\r\n    \"titulo\": \"Título 2\",\r\n    \"texto\": \"asdjfklasjdflasjdlçfjaldçsfjalksdjflkajsd fklajd flkajs dlfkaj sdflkj alkfja sçldkfj alsçkdjf alçks jdflaksj dflakj sdlfkjasd fasd fas dfa s\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/ap-anotacoes-ebd/anotacao",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"ap-anotacoes-ebd",
+						"anotacao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "atualizaAnotacao",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJTaXN0ZW1hIEFQIC0gQW5vdGHDp8O1ZXMgRUJEIiwic3ViIjoiODI3MmY2NTQtZWQ0NC00Y2IwLTk5ZDQtMTllY2E3YjAzMjJmIiwiaWF0IjoxNjQyMzg0ODYxLCJleHAiOjE2NDI0NzEyNjF9.e3bhX5MBaNYnxqvvrhOnc06oEup2u_szIwk7OC2n8Qo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idUsuario\": \"8272f654-ed44-4cb0-99d4-19eca7b0322f\",\r\n    \"sequencialAnotacao\": 2,\r\n    \"titulo\": \"Título 3\",\r\n    \"texto\": \"Oi, eu sou o Goku!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/ap-anotacoes-ebd/anotacao/8272f654-ed44-4cb0-99d4-19eca7b0322f/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"ap-anotacoes-ebd",
+						"anotacao",
+						"8272f654-ed44-4cb0-99d4-19eca7b0322f",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteAnotacao",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJTaXN0ZW1hIEFQIC0gQW5vdGHDp8O1ZXMgRUJEIiwic3ViIjoiODI3MmY2NTQtZWQ0NC00Y2IwLTk5ZDQtMTllY2E3YjAzMjJmIiwiaWF0IjoxNjQyMzg1MTM4LCJleHAiOjE2NDI0NzE1Mzh9.dDkHZxJVY48knmq2j2zkq4q17p5iPGxWN8zhLA5iJiA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/ap-anotacoes-ebd/anotacao/8272f654-ed44-4cb0-99d4-19eca7b0322f/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"ap-anotacoes-ebd",
+						"anotacao",
+						"8272f654-ed44-4cb0-99d4-19eca7b0322f",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
